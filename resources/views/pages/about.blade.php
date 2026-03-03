@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="relative bg-[#F3F3F3] overflow-hidden py-8 md:py-12 reveal-item opacity-0 transform translate-y-8 transition-all duration-700">
+<section class="relative bg-[#F3F3F3] overflow-hidden py-6 md:py-8 reveal-item opacity-0 transform translate-y-8 transition-all duration-700">
     <div class="hidden md:block absolute top-0 right-0 w-[120px] h-full bg-[#090069] z-0"
     style="clip-path: polygon(100% 0, 100% 100%, 0% 100%, 80% 0);">
     </div>

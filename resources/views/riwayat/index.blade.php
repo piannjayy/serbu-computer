@@ -19,7 +19,7 @@
     <form action="{{ route('riwayat.simulate') }}" method="POST" class="mb-4">
     @csrf
     <button 
-        onclick="return confirm('Simulasi order jadi 3 hari yang lalu?')"
+        onclick="return confirm('Simulasi order lewat 3 hari?')"
         class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-bold hover:bg-blue-700 transition">
         SIMULASI LEWAT 3 HARI
     </button>

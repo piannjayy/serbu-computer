@@ -124,7 +124,7 @@
                         </div>
                     </div>
 
-                    {{-- Price Display (REWORKED) --}}
+                    {{-- Price Display --}}
                     <div class="mb-8">
                         <div class="flex flex-col">
                             <span
@@ -186,7 +186,7 @@
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
                                 </svg>
-                                <span class="text-[10px] font-black uppercase tracking-[0.2em]">View Proof</span>
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em]">Proof</span>
                             </button>
                         @else
                             <div
@@ -195,40 +195,25 @@
                             </div>
                         @endif
 
-                        @if ($order->status !== 'dibatalkan')
-                            <div class="relative group/status flex-1">
-                                <div
-                                    class="flex items-center justify-center gap-3 bg-[#F0B22B] hover:bg-[#ffc13b] text-[#090069] py-4 rounded-2xl transition-all shadow-lg shadow-[#F0B22B]/20 cursor-pointer active:scale-95">
+                        {{-- TOMBOL UPDATE STATUS LANGSUNG --}}
+                        @if ($order->status !== 'selesai' && $order->status !== 'dibatalkan')
+                            <form action="{{ route('admin.orders.status', $order->id) }}" method="POST" class="flex-1">
+                                @csrf
+                                <button type="submit" name="status" value="selesai"
+                                    class="w-full flex items-center justify-center gap-3 bg-[#F0B22B] hover:bg-[#ffc13b] text-[#090069] py-4 rounded-2xl transition-all shadow-lg shadow-[#F0B22B]/20 active:scale-95">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                        <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                        <polyline points="20 6 9 17 4 12"></polyline>
                                     </svg>
-                                    <span class="text-[10px] font-black uppercase tracking-[0.2em]">Update</span>
-                                </div>
-
-                                <div class="status-dropdown">
-                                    <form action="{{ route('admin.orders.status', $order->id) }}" method="POST"
-                                        class="bg-[#1a203c] border border-white/10 rounded-[25px] shadow-2xl overflow-hidden p-2">
-                                        @csrf
-                                        <button name="status" value="menunggu_pembayaran_tunai"
-                                            class="w-full text-left px-5 py-3.5 text-[10px] font-black uppercase text-yellow-400 hover:bg-yellow-400/10 rounded-xl transition-colors mb-1">●
-                                            Cash Pending</button>
-                                        <button name="status" value="menunggu_verifikasi"
-                                            class="w-full text-left px-5 py-3.5 text-[10px] font-black uppercase text-blue-400 hover:bg-blue-400/10 rounded-xl transition-colors mb-1">●
-                                            Verifying</button>
-                                        <button name="status" value="selesai"
-                                            class="w-full text-left px-5 py-3.5 text-[10px] font-black uppercase text-green-400 hover:bg-green-400/10 rounded-xl transition-colors">●
-                                            Completed</button>
-                                    </form>
-                                </div>
-                            </div>
+                                    <span class="text-[10px] font-black uppercase tracking-[0.2em]">Complete</span>
+                                </button>
+                            </form>
                         @else
                             <div
-                                class="flex-1 flex items-center justify-center gap-3 bg-red-500/5 text-red-500/50 py-4 rounded-2xl border border-red-500/10 cursor-not-allowed">
+                                class="flex-1 flex items-center justify-center gap-3 bg-white/5 text-gray-500/50 py-4 rounded-2xl border border-white/5 cursor-not-allowed">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2">
-                                    </rect>
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                 </svg>
                                 <span class="text-[10px] font-black uppercase tracking-widest">Locked</span>
@@ -254,7 +239,7 @@
             @endforelse
         </div>
 
-        {{-- PAGINATION (REWORKED) --}}
+        {{-- PAGINATION --}}
         @if ($orders->hasPages())
             <div class="mt-20 flex justify-center custom-pagination reveal-anim" style="animation-delay: 0.8s">
                 {{ $orders->appends(request()->query())->links() }}
@@ -307,54 +292,12 @@
     </div>
 
     <style>
-        /* DROPDOWN FIX */
-        .status-dropdown {
-            position: absolute;
-            bottom: 100%;
-            right: 0;
-            width: 14rem;
-            padding-bottom: 1rem;
-            opacity: 0;
-            transform: translateY(10px) scale(0.95);
-            pointer-events: none;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: 50;
-        }
-
-        .group\/status:hover .status-dropdown {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
-
-        /* PAGINATION OVERRIDE (FIXING THE UGLY WHITE BOXES) */
-        /* PAGINATION OVERRIDE (VERSION: SLIM & COMPACT) */
-        .custom-pagination nav {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-        }
-
-        /* Sembunyiin "Showing X to Y" HANYA pada desktop, tanpa menyembunyikan pagination mobile */
-        .custom-pagination nav>div.hidden>div:first-child {
-            display: none !important;
-        }
-
-        .custom-pagination nav>div.hidden>div:last-child {
-            background: transparent !important;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Menghilangkan background wrapper dasar dari span container */
-        .custom-pagination nav span.relative {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-        }
-
-        /* Styling Tombol Angka & Arrow (Mencegah targeting ke span wrapper) */
+        /* PAGINATION OVERRIDE */
+        .custom-pagination nav { background: transparent !important; border: none !important; box-shadow: none !important; }
+        .custom-pagination nav>div.hidden>div:first-child { display: none !important; }
+        .custom-pagination nav>div.hidden>div:last-child { background: transparent !important; width: 100%; display: flex; justify-content: center; }
+        .custom-pagination nav span.relative { background: transparent !important; border: none !important; }
+        
         .custom-pagination nav span.relative>span,
         .custom-pagination nav span.relative>a,
         .custom-pagination nav>div:first-child>a,
@@ -368,86 +311,22 @@
             font-weight: 800 !important;
             margin: 0 2px !important;
             transition: all 0.3s ease !important;
-            box-shadow: none !important;
         }
 
-        /* Hover Effect */
-        .custom-pagination nav span.relative>a:hover,
-        .custom-pagination nav>div:first-child>a:hover {
-            background: rgba(240, 178, 43, 0.1) !important;
-            color: #F0B22B !important;
-            border-color: #F0B22B !important;
-            transform: translateY(-2px);
-        }
-
-        /* Active Page (Halaman yang lagi dibuka) */
-        .custom-pagination nav span[aria-current="page"]>span {
-            background: #F0B22B !important;
-            color: #090069 !important;
-            border-color: #F0B22B !important;
-            box-shadow: 0 5px 15px rgba(240, 178, 43, 0.2) !important;
-        }
-
-        /* Ukuran Icon Arrow (Panah) */
-        .custom-pagination nav svg {
-            width: 14px !important;
-            height: 14px !important;
-        }
+        .custom-pagination nav span.relative>a:hover { background: rgba(240, 178, 43, 0.1) !important; color: #F0B22B !important; border-color: #F0B22B !important; }
+        .custom-pagination nav span[aria-current="page"]>span { background: #F0B22B !important; color: #090069 !important; border-color: #F0B22B !important; }
 
         /* ANIMATIONS */
-        @keyframes slideDownFade {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .reveal-anim {
-            opacity: 0;
-            animation: slideDownFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .row-anim {
-            opacity: 0;
-            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
+        @keyframes slideDownFade { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal-anim { opacity: 0; animation: slideDownFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .row-anim { opacity: 0; animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
         .img-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(9, 0, 105, 0.98);
-            backdrop-filter: blur(25px);
-            z-index: 99999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: zoom-out;
+            position: fixed; inset: 0; background: rgba(9, 0, 105, 0.98); backdrop-filter: blur(25px);
+            z-index: 99999; display: flex; align-items: center; justify-content: center; cursor: zoom-out;
         }
-
-        .img-overlay img {
-            max-width: 90%;
-            max-height: 85%;
-            border-radius: 40px;
-            border: 4px solid #F0B22B;
-            shadow: 0 0 120px rgba(240, 178, 43, 0.3);
-        }
+        .img-overlay img { max-width: 90%; max-height: 85%; border-radius: 40px; border: 4px solid #F0B22B; }
     </style>
 
     <script>
