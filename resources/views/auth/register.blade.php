@@ -67,12 +67,19 @@
                            onblur="if(!this.value) this.type='text'"
                            class="w-full bg-[#2A314D]/50 text-gray-500 text-sm px-4 py-3 rounded-xl border border-white/5 focus:border-[#F0B22B]/50 focus:outline-none transition-all">
 
-                    <select name="jenis_kelamin"
-                            class="w-full bg-[#2A314D]/50 text-gray-500 text-sm px-4 py-3 rounded-xl border border-white/5 focus:border-[#F0B22B]/50 focus:outline-none transition-all">
-                        <option value="" disabled {{ old('jenis_kelamin') == '' ? 'selected' : '' }} hidden>Jenis Kelamin</option>
-                        <option value="L" {{ old('jenis_kelamin') == 'L' ? 'selected' : '' }}>Laki-laki</option>
-                        <option value="P" {{ old('jenis_kelamin') == 'P' ? 'selected' : '' }}>Perempuan</option>
-                    </select>
+                    <div class="relative group/select">
+                        <select name="jenis_kelamin"
+                                class="w-full bg-[#2A314D]/50 text-gray-300 text-sm px-4 py-3 rounded-xl border border-white/5 focus:border-[#F0B22B]/50 focus:outline-none transition-all appearance-none cursor-pointer pr-10 shadow-inner">
+                            <option value="" disabled {{ old('jenis_kelamin') == '' ? 'selected' : '' }} hidden>Jenis Kelamin</option>
+                            <option value="L" {{ old('jenis_kelamin') == 'L' ? 'selected' : '' }} class="bg-[#161B33] text-white">Laki-laki</option>
+                            <option value="P" {{ old('jenis_kelamin') == 'P' ? 'selected' : '' }} class="bg-[#161B33] text-white">Perempuan</option>
+                        </select>
+                        <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 group-hover/select:text-[#F0B22B] transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
 
                 <input type="text" name="no_hp" value="{{ old('no_hp') }}" placeholder="No HP "

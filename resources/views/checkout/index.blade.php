@@ -75,11 +75,11 @@
                         <div class="space-y-4">
                             <div class="relative group/select">
                                 <select name="metode_pembayaran" id="metode_pembayaran"
-                                    class="w-full bg-[#090069] border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm focus:ring-2 focus:ring-[#F0B22B] appearance-none cursor-pointer transition-all duration-300 pr-12 group-hover/select:border-[#F0B22B]/30 shadow-inner"
+                                    class="w-full bg-[#090069] border border-white/10 rounded-xl px-5 py-3.5 text-gray-200 text-sm focus:ring-2 focus:ring-[#F0B22B] appearance-none cursor-pointer transition-all duration-300 pr-12 group-hover/select:border-[#F0B22B]/30 shadow-inner"
                                     required>
-                                    <option value="" disabled selected>Pilih cara pembayaran</option>
-                                    <option value="tunai" {{ old('metode_pembayaran') === 'tunai' ? 'selected' : '' }}>Cash / Tunai di Toko</option>
-                                    <option value="bca" {{ old('metode_pembayaran') === 'bca' ? 'selected' : '' }}>Transfer Bank (BCA)</option>
+                                    <option value="" disabled selected class="bg-[#0c0c3d]">Pilih cara pembayaran</option>
+                                    <option value="tunai" {{ old('metode_pembayaran') === 'tunai' ? 'selected' : '' }} class="bg-[#0c0c3d]">Cash / Tunai di Toko</option>
+                                    <option value="bca" {{ old('metode_pembayaran') === 'bca' ? 'selected' : '' }} class="bg-[#0c0c3d]">Transfer Bank (BCA)</option>
                                 </select>
                                 <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 group-hover/select:text-[#F0B22B] transition-colors duration-300">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
