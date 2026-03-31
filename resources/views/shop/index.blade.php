@@ -6,7 +6,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8 reveal-item opacity-0 transform translate-y-8 transition-all duration-700">
                 <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">
-                    Our <span class="text-[#F0B22B]">Products</span>
+                    Produk <span class="text-[#F0B22B]">Kami</span>
                 </h1>
                 <p class="text-gray-300 text-base md:text-lg">
                     Temukan laptop dan aksesori komputer terbaik
@@ -17,21 +17,21 @@
                 <div class="flex flex-wrap gap-2 w-full lg:w-auto">
                     <a href="{{ route('shop.index') }}" 
                        class="px-4 py-2 rounded-full {{ !$category ? 'bg-[#F0B22B] text-black' : 'bg-white/10 text-white hover:bg-white/20' }} transition-colors font-medium text-xs md:text-base">
-                       All
+                       Semua
                     </a>
                     <a href="{{ route('shop.index', ['category' => 'Laptop']) }}" 
                        class="px-4 py-2 rounded-full {{ $category == 'Laptop' ? 'bg-[#F0B22B] text-black' : 'bg-white/10 text-white hover:bg-white/20' }} transition-colors font-medium text-xs md:text-base">
-                       Laptops
+                       Laptop
                     </a>
                     <a href="{{ route('shop.index', ['category' => 'Aksesoris']) }}" 
                        class="px-4 py-2 rounded-full {{ $category == 'Aksesoris' ? 'bg-[#F0B22B] text-black' : 'bg-white/10 text-white hover:bg-white/20' }} transition-colors font-medium text-xs md:text-base">
-                       Accessories
+                       Aksesori
                     </a>
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
                     <form action="{{ route('shop.index') }}" method="GET" class="relative w-full sm:w-64">
-                        <input type="text" name="search" value="{{ $search }}" placeholder="Search products..." 
+                        <input type="text" name="search" value="{{ $search }}" placeholder="Cari produk..." 
                                class="w-full pl-4 pr-10 py-2.5 bg-white/10 border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F0B22B] text-sm">
                         <button type="submit" class="absolute right-3 top-3 text-[#F0B22B]">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,10 +42,10 @@
 
                     <div class="relative w-full sm:w-48">
                         <select id="sortSelect" class="w-full px-4 py-2.5 bg-[#0c0c3d] border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#F0B22B] text-sm appearance-none">
-                            <option value="newest">Sort: Newest</option>
-                            <option value="price-low">Sort: Price Low to High</option>
-                            <option value="price-high">Sort: Price High to Low</option>
-                            <option value="name">Sort: Name A-Z</option>
+                            <option value="newest">Urutan: Terbaru</option>
+                            <option value="price-low">Urutan: Harga Terendah</option>
+                            <option value="price-high">Urutan: Harga Tertinggi</option>
+                            <option value="name">Urutan: Nama A-Z</option>
                         </select>
                     </div>
                 </div>
@@ -54,14 +54,14 @@
             @if($category || $search)
             <div class="mb-6 reveal-item opacity-0 transform translate-y-8 transition-all duration-700">
                 <div class="flex flex-wrap gap-2 items-center">
-                    <span class="text-gray-400 text-sm">Active filters:</span>
+                    <span class="text-gray-400 text-sm">Filter aktif:</span>
                     @if($category)
                     <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs bg-[#F0B22B] text-black font-medium">
                         {{ $category }}
                         <a href="{{ route('shop.index', ['search' => $search]) }}" class="ml-1.5 hover:text-red-600">×</a>
                     </span>
                     @endif
-                    <a href="{{ route('shop.index') }}" class="text-[#F0B22B] hover:text-white text-sm ml-2 font-medium">Clear all</a>
+                    <a href="{{ route('shop.index') }}" class="text-[#F0B22B] hover:text-white text-sm ml-2 font-medium">Hapus semua</a>
                 </div>
             </div>
             @endif
@@ -84,9 +84,9 @@
 
                 <div class="absolute top-2 right-2 md:top-4 md:right-4 z-20">
                     @if($product->stock > 0)
-                        <span class="px-2 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] font-semibold rounded-full bg-[#F0B22B] text-black">Stock: {{ $product->stock }}</span>
+                        <span class="px-2 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] font-semibold rounded-full bg-[#F0B22B] text-black">Stok: {{ $product->stock }}</span>
                     @else
-                        <span class="px-2 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] font-semibold rounded-full bg-red-500 text-white">Out</span>
+                        <span class="px-2 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] font-semibold rounded-full bg-red-500 text-white">Habis</span>
                     @endif
                 </div>
 
@@ -101,7 +101,7 @@
                             {{ $product->name }}
                         </h3>
                         <div class="mt-auto">
-                            <p class="text-gray-300 text-[8px] md:text-[10px] mb-0.5 md:mb-1">starts from :</p>
+                            <p class="text-gray-300 text-[8px] md:text-[10px] mb-0.5 md:mb-1">mulai dari :</p>
                             <p class="text-[#F0B22B] text-[9px] md:text-xs font-semibold">
                                 Rp {{ number_format($product->price, 0, ',', '.') }}
                             </p>
@@ -118,7 +118,7 @@
 
                         <a href="{{ route('shop.show', $product->id) }}"
                            class="mt-auto inline-block bg-[#F0B22B] text-black px-2 md:px-4 py-1 md:py-1.5 rounded-full text-[8px] md:text-[10px] self-end font-bold transition-all duration-300 hover:bg-white hover:scale-105">
-                            View Details
+                            Lihat Detail
                         </a>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                 @if(!$products->onFirstPage())
                 <a href="{{ $products->previousPageUrl() }}" class="px-3 py-1.5 bg-white/5 hover:bg-[#F0B22B] hover:text-black rounded-lg text-white transition-all text-sm">←</a>
                 @endif
-                <span class="px-4 text-[#F0B22B] text-sm font-bold">Page {{ $products->currentPage() }}</span>
+                <span class="px-4 text-[#F0B22B] text-sm font-bold">Halaman {{ $products->currentPage() }}</span>
                 @if($products->hasMorePages())
                 <a href="{{ $products->nextPageUrl() }}" class="px-3 py-1.5 bg-white/5 hover:bg-[#F0B22B] hover:text-black rounded-lg text-white transition-all text-sm">→</a>
                 @endif
@@ -147,9 +147,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">No products found</h3>
-            <p class="text-gray-400 text-sm mb-6">Try different filters or search terms</p>
-            <a href="{{ route('shop.index') }}" class="inline-block bg-[#F0B22B] text-black px-8 py-3 rounded-full font-bold hover:bg-white transition-all">Clear All Filters</a>
+            <h3 class="text-xl font-bold text-white mb-2">Produk tidak ditemukan</h3>
+            <p class="text-gray-400 text-sm mb-6">Coba filter atau kata kunci pencarian yang lain</p>
+            <a href="{{ route('shop.index') }}" class="inline-block bg-[#F0B22B] text-black px-8 py-3 rounded-full font-bold hover:bg-white transition-all">Hapus Semua Filter</a>
         </div>
         @endif
     </div>

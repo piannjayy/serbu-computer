@@ -22,10 +22,10 @@
 
             <div class="order-2 text-center md:text-left">
                 <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-black leading-tight mb-4">
-                    About Serbu Computer
+                    Tentang Serbu Computer
                 </h1>
                 <p class="text-gray-700 text-base md:text-lg max-w-lg leading-relaxed font-medium mx-auto md:mx-0">
-                    Your trusted place for laptops and accessories in 
+                    Tempat terpercaya untuk laptop dan aksesori di 
                     <span class="inline-block text-[#090069] font-bold border-b-4 border-[#F0B22B] pb-1">Serbu Computer</span>.
                 </p>
             </div>
@@ -65,9 +65,15 @@
 
 <section class="bg-[#090069] py-16 px-6 md:px-16">
     <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12 reveal-item opacity-0 transform translate-y-8 transition-all duration-700">
-            <h3 class="text-[#F0B22B] text-2xl md:text-3xl font-bold mb-2">Mengapa Memilih Kami?</h3>
-            <p class="text-gray-400 text-sm md:text-base">Komitmen Serbu Computer untuk memberikan pengalaman terbaik bagi Anda.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center mb-8 reveal-item opacity-0 transform translate-y-8 transition-all duration-700">
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">
+                    Keunggulan <span class="text-[#F0B22B]">Kami</span>
+                </h1>
+                <p class="text-gray-300 text-base md:text-lg">
+                Alasan mengapa Serbu Computer menjadi pilihan utama untuk solusi laptop dan aksesori Anda.
+            </p>
+            </div>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -81,7 +87,7 @@
             @endphp
 
             @foreach($items as $item)
-            <div class="reveal-item opacity-0 transform translate-y-8 transition-all duration-700 flex items-center gap-5 bg-[#0c0c3d] rounded-2xl p-6 text-white border border-white/5 hover:border-[#F0B22B]/40 transition-all duration-300 group shadow-lg">
+            <div class="reveal-item opacity-0 transform translate-y-8 transition-all duration-700 flex flex-col md:flex-row items-center gap-5 bg-[#0c0c3d] rounded-2xl p-6 text-white border border-white/5 hover:border-[#F0B22B]/40 transition-all duration-300 group shadow-lg">
                 <div class="flex-shrink-0 w-14 h-14 bg-[#F0B22B] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(240,178,43,0.2)] group-hover:shadow-[0_0_20px_rgba(240,178,43,0.4)] group-hover:scale-110 transition-all duration-300">
                     <svg class="w-8 h-8 text-[#090069]" fill="currentColor" viewBox="0 0 24 24">
                         {!! $item['svg'] !!}
@@ -91,7 +97,7 @@
                     <h4 class="font-bold text-lg mb-1 group-hover:text-[#F0B22B] transition-colors uppercase tracking-tight">
                         {{ $item['title'] }}
                     </h4>
-                    <p class="text-gray-400 text-sm leading-relaxed italic">
+                    <p class="text-gray-300 text-sm leading-relaxed italic">
                         {{ $item['desc'] }}
                     </p>
                 </div>

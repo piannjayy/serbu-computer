@@ -8,20 +8,20 @@
 
     <nav class="reveal-item flex justify-center flex-wrap gap-6 text-sm font-medium text-black mb-6 opacity-0 transform translate-y-8 transition-all duration-700">
         <a href="{{ auth()->check() ? route('dashboard') : route('home') }}"
-           class="hover:text-[#F0B22B] transition">Home</a>
+           class="hover:text-[#F0B22B] transition">Beranda</a>
 
         <a href="{{ route('shop.index') }}"
-           class="hover:text-[#F0B22B] transition">Products</a>
+           class="hover:text-[#F0B22B] transition">Produk</a>
 
         <a href="{{ route('pages.about') }}"
-           class="hover:text-[#F0B22B] transition">About</a>
+           class="hover:text-[#F0B22B] transition">Tentang</a>
 
         @auth
             <a href="{{ route('riwayat.index') }}"
-               class="hover:text-[#F0B22B] transition">History</a>
+               class="hover:text-[#F0B22B] transition">Riwayat</a>
 
             <a href="{{ route('profile.edit') }}"
-               class="hover:text-[#F0B22B] transition">Profile</a>
+               class="hover:text-[#F0B22B] transition">Profil</a>
         @endauth
     </nav>
 
@@ -46,7 +46,7 @@
     </div>
 
     <div class="reveal-item bg-[#F0B22B] py-3 text-xs font-medium text-black opacity-0 transform translate-y-8 transition-all duration-700">
-        © {{ date('Y') }} Serbu Computer. All Rights Reserved.
+        © {{ date('Y') }} Serbu Computer. Hak Cipta Dilindungi.
     </div>
 
     <script>

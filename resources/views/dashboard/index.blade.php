@@ -24,15 +24,15 @@
 
         <div class="relative z-10 order-2 md:order-1 text-center md:text-left">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-black leading-tight mb-4 md:mb-6">
-                <span class="block">Complete Your</span>
-                <span class="block">Laptop Setup Today</span>
+                <span class="block">Serbu Kebutuhan</span>
+                <span class="block">IT Kamu Sekarang</span>
             </h1>
             <p class="text-gray-700 text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed font-medium">
-                Laptops and accessories you can book easily at Serbu Computer.
+               Sedia berbagai tipe laptop dan aksesori original yang bisa kamu pesan langsung.
             </p>
             <button onclick="scrollToAbout()"
                 class="w-full sm:w-auto bg-[#F0B22B] px-10 py-3.5 rounded-full font-bold hover:scale-105 active:scale-95 transition-all shadow-lg text-sm uppercase tracking-widest text-black">
-                Started Now
+                Mulai Sekarang
             </button>
         </div>
     </div>
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="text-center md:text-left order-2">
-            <h2 class="text-2xl md:text-3xl font-bold text-[#F0B22B] mb-4 uppercase tracking-wider">A Little About Us</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#F0B22B] mb-4 uppercase tracking-wider">Sedikit Tentang Kami</h2>
             <div class="w-16 h-1 bg-[#F0B22B] mb-6 mx-auto md:mx-0"></div>
             <p class="text-gray-300 text-sm md:text-base leading-relaxed">
                 Serbu Comp adalah mitra terpercaya Anda dalam menyediakan laptop dan aksesoris berkualitas dengan harga terjangkau. 
@@ -62,7 +62,7 @@
 </section>
 
 <section class="bg-[#090069] px-4 md:px-16 py-20 reveal">
-    <h2 class="text-center text-[#F0B22B] text-2xl font-black mb-12 tracking-widest uppercase">PRODUCTS</h2>
+    <h2 class="text-center text-[#F0B22B] text-2xl font-black mb-12 tracking-widest uppercase">Produk Kami</h2>
 
     <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
         @foreach ($products as $index => $product)
@@ -82,9 +82,9 @@
 
             <div class="absolute top-2 right-2 md:top-4 md:right-4 z-20">
                 @if($product->stock > 0)
-                    <span class="px-2 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] font-semibold rounded-full bg-[#F0B22B] text-black">Stock: {{ $product->stock }}</span>
+                    <span class="px-2 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] font-semibold rounded-full bg-[#F0B22B] text-black">Stok: {{ $product->stock }}</span>
                 @else
-                    <span class="px-2 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] font-semibold rounded-full bg-red-500 text-white">Out</span>
+                    <span class="px-2 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] font-semibold rounded-full bg-red-500 text-white">Habis</span>
                 @endif
             </div>
 
@@ -99,7 +99,7 @@
                         {{ $product->name }}
                     </h3>
                     <div class="mt-auto">
-                        <p class="text-gray-300 text-[8px] md:text-[10px] mb-0.5 md:mb-1">starts from :</p>
+                        <p class="text-gray-300 text-[8px] md:text-[10px] mb-0.5 md:mb-1">mulai dari :</p>
                         <p class="text-[#F0B22B] text-[9px] md:text-xs font-semibold transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-1">
                             Rp {{ number_format($product->price, 0, ',', '.') }}
                         </p>
@@ -116,7 +116,7 @@
 
                     <a href="{{ route('shop.show', $product->id) }}"
                        class="mt-auto inline-block bg-[#F0B22B] text-black px-2 md:px-4 py-1 md:py-1.5 rounded-full text-[8px] md:text-[10px] self-end font-bold transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-lg hover:shadow-[#F0B22B]/30 relative overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-r after:from-white/10 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-100 after:transition-transform after:duration-500">
-                        View Details
+                        Lihat Detail
                     </a>
                 </div>
             </div>
@@ -129,7 +129,7 @@
 
 <section class="bg-[#0c0c3d] px-6 md:px-16 py-20 reveal">
     <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-[#F0B22B] text-3xl font-bold mb-10 uppercase tracking-widest">Our Gallery</h2>
+        <h2 class="text-[#F0B22B] text-3xl font-bold mb-10 uppercase tracking-widest">Galeri Kami</h2>
         <div class="swiper myGallery">
             <div class="swiper-wrapper">
                 @foreach ($gallery as $image)
@@ -147,7 +147,7 @@
 
 <section class="bg-gradient-to-b from-[#090069] to-[#0c0c3d] px-4 md:px-16 py-16 md:py-24 reveal">
     <div class="max-w-3xl mx-auto">
-        <h2 class="text-center text-[#F0B22B] text-2xl md:text-3xl font-bold mb-8 md:mb-12 uppercase tracking-wide">FAQ</h2>
+        <h2 class="text-center text-[#F0B22B] text-2xl md:text-3xl font-bold mb-8 md:mb-12 uppercase tracking-wide">Pertanyaan Umum</h2>
         
         <div class="space-y-3 md:space-y-4">
             @foreach ($faqs as $index => $faq)

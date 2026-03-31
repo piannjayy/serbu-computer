@@ -16,7 +16,7 @@
             </a>
             <a href="{{ route('shop.index') }}" 
                class="hover:text-white transition-colors duration-200">
-                Product
+                Produk
             </a>
             <a href="{{ route('riwayat.index') }}" 
                class="hover:text-white transition-colors duration-200">
@@ -24,7 +24,7 @@
             </a>
             <a href="{{ route('pages.about') }}" 
                class="hover:text-white transition-colors duration-200">
-                About Us
+                Tentang Kami
             </a>
         </nav>
 
@@ -73,7 +73,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#F0B22B] group-hover:text-[#090069]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
-            <span>Profile</span>
+            <span>Profil</span>
         </a>
 
         <div class="h-[1px] bg-white/10 mx-2"></div>
@@ -85,7 +85,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>
-                <span class="font-semibold">Logout</span>
+                <span class="font-semibold">Keluar</span>
             </button>
         </form>
     </div>
@@ -137,15 +137,15 @@
                 </a>
                 <a href="{{ route('shop.index') }}" 
                    class="block text-white hover:text-[#F0B22B] py-2">
-                    Product
+                    Produk
                 </a>
                 <a href="{{ route('riwayat.index') }}" 
                    class="block text-white hover:text-[#F0B22B] py-2">
-                    History
+                    Riwayat
                 </a>
                 <a href="{{ route('pages.about') }}" 
                    class="block text-white hover:text-[#F0B22B] py-2">
-                    About Us
+                    Tentang Kami
                 </a>
 
                 <hr class="border-white/10 my-2">
@@ -168,7 +168,7 @@
                         <circle cx="12" cy="7" r="4"/>
                         <path d="M5.5 21a6.5 6.5 0 0 1 13 0"/>
                     </svg>
-                    <span>Profile</span>
+                    <span>Profil</span>
                 </a>
             </nav>
 
@@ -181,7 +181,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/>
             </svg>
-            <span>Logout</span>
+            <span>Keluar</span>
         </button>
     </form>
 </div>

@@ -12,15 +12,15 @@
         <nav class="hidden md:flex gap-8 text-sm font-semibold text-[#F0B22B]">
             <a href="{{ route('home') }}" 
                class="hover:text-white transition-colors duration-200">
-                Home
+                Beranda
             </a>
             <a href="{{ route('shop.index') }}" 
                class="hover:text-white transition-colors duration-200">
-                Product
+                Produk
             </a>
             <a href="{{ route('pages.about') }}" 
                class="hover:text-white transition-colors duration-200">
-                About Us
+                Tentang Kami
             </a>
         </nav>
 
@@ -29,12 +29,12 @@
             <a href="{{ route('login') }}"
                class="bg-[#F0B22B] text-black font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full
                       hover:bg-white hover:scale-105 transition-all duration-200 text-xs sm:text-sm">
-                Login
+                Masuk
             </a>
             <a href="{{ route('register') }}"
                class="border border-white text-white font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full
                       hover:bg-white hover:text-[#090069] transition-all duration-200 text-xs sm:text-sm">
-                Register
+                Daftar
             </a>
         </div>
 
@@ -79,26 +79,26 @@
             <nav class="p-4 space-y-4">
                 <a href="{{ route('home') }}" 
                    class="block text-white hover:text-[#F0B22B] py-2">
-                    Home
+                    Beranda
                 </a>
                 <a href="{{ route('shop.index') }}" 
                    class="block text-white hover:text-[#F0B22B] py-2">
-                    Product
+                    Produk
                 </a>
                 <a href="{{ route('pages.about') }}" 
                    class="block text-white hover:text-[#F0B22B] py-2">
-                    About Us
+                    Tentang Kami
                 </a>
             </nav>
 
             <div class="p-4 border-t border-white/20 space-y-3">
                 <a href="{{ route('login') }}"
                    class="block bg-[#F0B22B] text-black font-semibold px-4 py-2 rounded-full text-center">
-                    Login
+                    Masuk
                 </a>
                 <a href="{{ route('register') }}"
                    class="block border border-white text-white font-semibold px-4 py-2 rounded-full text-center">
-                    Register
+                    Daftar
                 </a>
             </div>
         </div>

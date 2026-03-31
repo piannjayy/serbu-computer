@@ -24,15 +24,15 @@
 
         <div class="relative z-10 order-2 md:order-1 text-center md:text-left">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-black leading-tight mb-4 md:mb-6">
-                <span class="block">Complete Your</span>
-                <span class="block">Laptop Setup Today</span>
+                <span class="block">Serbu Kebutuhan</span>
+                <span class="block">IT Kamu Sekarang</span>
             </h1>
             <p class="text-gray-700 text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed font-medium">
-                Laptops and accessories you can book easily at Serbu Computer.
+               Sedia berbagai tipe laptop dan aksesori original yang bisa kamu pesan langsung.
             </p>
             <button onclick="scrollToAbout()"
                 class="w-full sm:w-auto bg-[#F0B22B] px-10 py-3.5 rounded-full font-bold hover:scale-105 active:scale-95 transition-all shadow-lg text-sm uppercase tracking-widest text-black">
-                Started Now
+                Mulai Sekarang
             </button>
         </div>
     </div>
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="text-center md:text-left order-2">
-            <h2 class="text-2xl md:text-3xl font-bold text-[#F0B22B] mb-4 uppercase tracking-wider">A Little About Us</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#F0B22B] mb-4 uppercase tracking-wider">Sedikit Tentang Kami</h2>
             <div class="w-16 h-1 bg-[#F0B22B] mb-6 mx-auto md:mx-0"></div>
             <p class="text-gray-300 text-sm md:text-base leading-relaxed">
                 Serbu Comp adalah mitra terpercaya Anda dalam menyediakan laptop dan aksesoris berkualitas dengan harga terjangkau. 
@@ -62,7 +62,7 @@
 </section>
 
 <section class="bg-[#090069] px-4 md:px-16 py-20 reveal">
-    <h2 class="text-center text-[#F0B22B] text-2xl font-black mb-12 tracking-widest uppercase">PRODUCTS</h2>
+    <h2 class="text-center text-[#F0B22B] text-2xl font-black mb-12 tracking-widest uppercase">Produk Kami</h2>
 
     <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
         @foreach ($products as $index => $product)
@@ -129,7 +129,7 @@
 
 <section class="bg-[#0c0c3d] px-6 md:px-16 py-20 reveal">
     <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-[#F0B22B] text-3xl font-bold mb-10 uppercase tracking-widest">Our Gallery</h2>
+        <h2 class="text-[#F0B22B] text-3xl font-bold mb-10 uppercase tracking-widest">Galeri Kami</h2>
         <div class="swiper myGallery">
             <div class="swiper-wrapper">
                 @foreach ($gallery as $image)
@@ -147,7 +147,7 @@
 
 <section class="bg-gradient-to-b from-[#090069] to-[#0c0c3d] px-4 md:px-16 py-16 md:py-24 reveal">
     <div class="max-w-3xl mx-auto">
-        <h2 class="text-center text-[#F0B22B] text-2xl md:text-3xl font-bold mb-8 md:mb-12 uppercase tracking-wide">FAQ</h2>
+        <h2 class="text-center text-[#F0B22B] text-2xl md:text-3xl font-bold mb-8 md:mb-12 uppercase tracking-wide">Pertanyaan Umum</h2>
         
         <div class="space-y-3 md:space-y-4">
             @foreach ($faqs as $index => $faq)
