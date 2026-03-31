@@ -29,8 +29,8 @@
             
             <div class="text-center mb-8">
                 <h1 class="text-xl font-semibold tracking-tight">
-                    <span class="text-white">Masukkan</span>
-                    <span class="text-[#F0B22B]">Informasi Pribadi</span>
+                    <span class="text-white">Masukkan Data</span>
+                    <span class="text-[#F0B22B]">Pendaftaran Akun</span>
                 </h1>
             </div>
 
