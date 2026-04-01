@@ -60,19 +60,17 @@ Route::middleware('guest')->group(function () {
 
 /*
 |--------------------------------------------------------------------------
-| AUTH ADMIN
+| AUTH ADMIN (CUSTOM URL FOR SECURITY)
 |--------------------------------------------------------------------------
 */
-Route::middleware('guest')
-    ->prefix('admin')
-    ->name('admin.')
+Route::middleware(['guest', 'throttle:10,1']) 
     ->group(function () {
 
-        Route::get('/login', fn () => view('admin.auth.login'))
-            ->name('login');
+        Route::get('/serbu-secret-admin', fn () => view('admin.auth.login'))
+            ->name('admin.login');
 
-        Route::post('/login', [LoginController::class, 'loginAdmin'])
-            ->name('login.submit');
+        Route::post('/serbu-secret-admin', [LoginController::class, 'loginAdmin'])
+            ->name('admin.login.submit');
 });
 
 /*

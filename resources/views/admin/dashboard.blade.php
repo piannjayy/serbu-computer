@@ -15,7 +15,7 @@
     {{-- Total User --}}
     <a href="{{ route('admin.users.index') }}" class="reveal-anim bg-white p-6 rounded-[24px] shadow-sm flex items-center justify-between border border-white/10 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 group" style="animation-delay: 0.2s">
         <div>
-            <p class="text-gray-500 text-sm font-medium uppercase tracking-wider">Total User</p>
+            <p class="text-gray-500 text-sm font-medium uppercase tracking-wider">Total Member</p>
             <h3 class="text-3xl font-bold text-[#090069] mt-1">{{ $totalUsers }}</h3>
         </div>
         <div class="bg-[#F0B22B]/10 p-3 rounded-2xl group-hover:bg-[#F0B22B]/20 transition-colors">

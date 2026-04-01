@@ -15,7 +15,7 @@ class DashboardApiController extends Controller
         // Hapus order cash expired (logic tetap dipakai)
         Order::clearExpiredCashOrders();
 
-        $totalUsers = User::count();
+        $totalUsers = User::where('role', 'pengguna')->count();
         $totalProducts = Product::count();
         $totalOrders = Order::count();
 

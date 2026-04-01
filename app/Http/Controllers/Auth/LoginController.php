@@ -62,21 +62,15 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+        $credentials['role'] = 'admin'; 
+
         if (!Auth::attempt($credentials)) {
-            return back()->withErrors([
-                'username' => 'Username atau password salah'
-            ])->withInput();
+            return redirect()->route('login')->withErrors([
+                'username' => 'Username atau password salah.'
+            ]);
         }
 
         $request->session()->regenerate();
-
-        // Pastikan role admin
-        if (auth()->user()->role !== 'admin') {
-            Auth::logout();
-            return back()->withErrors([
-                'username' => 'Login ini khusus admin.'
-            ]);
-        }
 
         return redirect()->route('admin.dashboard');
     }
